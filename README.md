@@ -43,3 +43,14 @@ ansible-playbook roles/facts/tasks/main.yml
 /tmp/facts/server-3.example.com/tmp/server-3.example.com.json
 ...
 ```
+
+## Get the Facts - CLI
+- Command:
+```
+ANSIBLE_LOAD_CALLBACK_PLUGINS=true ANSIBLE_STDOUT_CALLBACK=json ansible all -m ansible.builtin.setup | tee /tmp/facts.json
+```
+
+- Creates:
+```
+/tmp/facts.json
+```
